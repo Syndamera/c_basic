@@ -2,6 +2,14 @@
 
 typedef unsigned char byte;
 
+// Macro
+#define SQUARE(x) Multiply(x, x)
+
+int Multiply(int a, int b)
+{
+    return a * b;
+}
+
 float CelsiusToFahrenheit(float celsius)
 {
     return celsius * 9 / 5 + 32;

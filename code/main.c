@@ -13,4 +13,5 @@ int main(int argv, char*argc)
     // Pluralsight
     Pluralsight(10);
     TypeSizes();
+    printf("Macro Test: %d\n", SQUARE(4));
 }

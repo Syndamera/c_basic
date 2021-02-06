@@ -1,7 +1,25 @@
-##############
 # C Overview #
-##############
+What is C?
 	a. ANSI C / C89
 	b. C99 & C11
 	c. Systems programming language - e.g. embedded system
+	d. Compiler language
 
+# SOURCE FILES #
+There are two main source files in C.
+	1. .c files
+	2. .h files
+
+main.c		-> entry point of our translation unit
+#include "multiply.h"
+	multiply(4, 5);
+
+multiply.c	-> implementation
+	int multiply(int a, int b)
+	{
+		return a * b;
+	}
+multiply.h	-> declaration -> definition -> initzilser
+int multiply(int, int);
+
+# PREPROCESSOR #

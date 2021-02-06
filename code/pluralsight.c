@@ -10,10 +10,8 @@ float CelsiusToKelvin(float celsius)
     return celsius + 273.15f;
 }
 
-int main()
+void Pluralsight(float celsius)
 {
-    float celsius = 0;
-    
     while(celsius < 100)
     {
         float fahr = CelsiusToFahrenheit(celsius);

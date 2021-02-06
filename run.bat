@@ -1,4 +1,4 @@
 @echo off
 pushd build
-pluralsight.exe
+main.exe
 popd

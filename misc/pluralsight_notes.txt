@@ -1,3 +1,7 @@
-C Overview
-##########
-	a. Systems programming language
+##############
+# C Overview #
+##############
+	a. ANSI C / C89
+	b. C99 & C11
+	c. Systems programming language - e.g. embedded system
+

@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+typedef unsigned char byte;
+
 float CelsiusToFahrenheit(float celsius)
 {
     return celsius * 9 / 5 + 32;
@@ -21,4 +23,14 @@ void Pluralsight(float celsius)
         
         celsius = celsius + 10;
     }
+}
+
+// no return type so is not declared in the .h file, why does this work?
+void TypeSizes()
+{
+    printf("byte: %u bytes\n", (int)sizeof(byte));
+    printf("char: %d bytes\n", (int)sizeof(char));
+    printf("int: %d bytes\n", (int)sizeof(int));
+    printf("float: %d bytes\n", (int)sizeof(float));
+    printf("double: %d bytes\n", (int)sizeof(double));
 }

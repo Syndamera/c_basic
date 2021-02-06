@@ -23,3 +23,28 @@ multiply.h	-> declaration -> definition -> initzilser
 int multiply(int, int);
 
 # PREPROCESSOR #
+With cl use the following for generating a .i file.
+	/P to get a main.i file
+	/C to preserve comments
+	/EP supress hash lines
+
+#define SQUARE(x) multiply(x, x) -> Macro
+#define LEVEL 2
+	#if LEVEL > 0
+	SQUARE(9);
+	#endif
+
+# COMPILER & LINKER#
+The compiler outputs a .obj file.
+The linker only needs a .obj file to generate a .exe file.
+
+# TYPES & DECLARATIONS #
+Type -> Name -> Init
+	int x = 0;
+
+Static retains the value throughout each function call and init it to 0.
+A "global" static is accessible only in the current source file.
+If you declare a "global" without the static it will be shared across all files.
+
+typedef unsigned char byte;
+byte b = 0x12;

@@ -11,7 +11,14 @@ int main(int argv, char*argc)
     //PrintFahrCelsius();
     
     // Pluralsight
-    Pluralsight(10);
+    TempratureTable(10, 10);
+    
+    float c = KelvinToCelsius(274.15f);
+    printf("Kelvin > Celsius: %.2f\n", c);
+    
+    c = FahrenheitToCelsius(42);
+    printf("Fahrenheit > Celsius: %.2f\n", c);
+    
     TypeSizes();
     printf("Macro Test: %d\n", SQUARE(4));
 }

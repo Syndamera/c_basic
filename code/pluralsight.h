@@ -8,7 +8,7 @@ float CelsiusToFahrenheit(float);
 float CelsiusToKelvin(float);
 float KelvinToCelsius(float);
 float FahrenheitToCelsius(float);
-//float FahrenheitToKelvin(float);
+float FahrenheitToKelvin(float);
 void Pluralsight(float);
 
 #endif //PLURALSIGHT_H

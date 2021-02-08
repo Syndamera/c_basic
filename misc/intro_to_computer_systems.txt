@@ -23,3 +23,6 @@ Great Realities
 # Textbooks #
  1. Computer Systems: A Programmer's Perspective
  2. C Programming Language
+
+# Bits, Bytes and Integers #
+

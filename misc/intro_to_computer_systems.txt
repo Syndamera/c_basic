@@ -1,0 +1,25 @@
+# Overview #
+Great Realities
+	1. Ints are not Integers, Floats are not Reals
+		Example 1: Is x^2 > 0?
+		Floats yes!
+	Integers 40 000 * 40 000 =  1600000000
+	Integers 50 000 * 50 000 = -1794967296
+	2. You got to know Assembly
+	3. Memory Matters Random Access Memory
+		a. Memory must be allocated and managed.
+		b. Many applications are memory dominated.
+		c. Cache and virtual memory can effect greatly on the programs performance.
+		d. Adapting a program to the memory system can lead to major speed improvments.
+	4. There is more performance than...
+		a. Understand how programs are copmiled and executed.
+		b. How to measure a program performance and identify bottlenecks.
+		c. How to improve without destryoing code modularity and generality.
+
+	5. Computers do more than execute..
+		a. They need to get data in and out.
+		b. They communicate with each other over networks.
+
+# Textbooks #
+ 1. Computer Systems: A Programmer's Perspective
+ 2. C Programming Language

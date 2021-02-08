@@ -48,3 +48,85 @@ If you declare a "global" without the static it will be shared across all files.
 
 typedef unsigned char byte;
 byte b = 0x12;
+
+# STRUCTS, UNIONS AND ENUMS #
+Easiest way to define a struct is as follow
+
+typedef struct
+{
+	float X;
+	float Y;
+} Pixel;
+
+We are using a shortcut above but whats really happens are
+typedef struct Pixel Pixel
+Because structs, untions and enums are in a different
+namespace.
+
+You can also init its member values with this syntax.
+	Pixel p = { 10.0f, 20.0f };
+	Pixel p = {0}; -> zero init all members
+
+Access and retrive a structs members
+	float x = p.X;
+	p.y = 40.0f;
+
+# Memory layout and padding #
+The memory addresses in structs are seperate adress and
+rising as you lay them out.
+
+typedef struct
+{
+	short first; -> 2 bytes -> 16bit
+	int second;  -> 4 bytes -> 32bit
+	short third; -> 2 bytes -> 16bit
+} Layout; -> 12 bytes
+
+This struct will be 12 bytes even tho we should have 8 bytes.
+As we are on a 32 bit machine the shorts will be padded 
+to align with 32 bit (4 bytes).
+	  4b	 4b	 4b 
+	[XX--] [XXXX] [XX--]
+Where X is the occupied memory of our struct members.
+To fix this we just need to rearrange our members.
+
+typedef struct
+{							 4b
+	short first; -> 2 bytes [XX
+	short third; -> 2 bytes    XX] 4b
+	int second;  -> 4 bytes      [XXXX]
+} Layout; -> 8 bytes
+
+# Unions #
+The memory layout of a union are shared adresses
+amongst its members and the size of the union is the least
+amount of space required to hold any one of the unions members.
+
+typedef union
+{
+	int i;  -> 4 bytes
+	char c; -> 1 byte
+} TestingUnion; - 4 bytes
+
+typedef union
+{
+	int i;  -> 4 bytes
+	float f; -> 4 byte
+} TestingUnion; - 4 bytes
+
+The compiler won't know what type that is stored in a union.
+We can use a enumeration to hold a set of values.
+
+typedef enum
+{
+	IsInt,
+	IsChar
+} WhatIsIt;
+
+	TestingUnion var;
+	var.i = 123;
+	WhatIsIt type = IsInt;
+	var.c = 'V';
+	type = IsChar;
+	
+# STATEMENTS #

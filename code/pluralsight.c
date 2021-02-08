@@ -81,6 +81,7 @@ void TypeSizes()
 {
     printf("byte: %u bytes\n", (int)sizeof(byte));
     printf("char: %d bytes\n", (int)sizeof(char));
+    printf("short: %d bytes\n", (int)sizeof(short));
     printf("int: %d bytes\n", (int)sizeof(int));
     printf("float: %d bytes\n", (int)sizeof(float));
     printf("double: %d bytes\n", (int)sizeof(double));

@@ -5,6 +5,17 @@
 int global_int = 0; // accessible in all files.
 static int static_global_int; // accessible only in this file.
 
+typedef struct
+{
+    char c;
+    int i;
+} PluralStruct;
+
+void PrintStructSize(struct s)
+{
+    printf("Struct Size: %d\n", (int)sizeof(s));
+}
+
 int main(int argv, char*argc)
 {
     // Ansi C - Chapter 01
@@ -27,4 +38,7 @@ int main(int argv, char*argc)
     
     TypeSizes();
     printf("Macro Test: %d\n", SQUARE(4));
+    
+    PluralStruct s = {0};
+    PrintStructSize(s);
 }

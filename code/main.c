@@ -11,7 +11,7 @@ typedef struct
     int i;
 } PluralStruct;
 
-void PrintStructSize(struct s)
+void PrintStructSize(PluralStruct s)
 {
     printf("Struct Size: %d\n", (int)sizeof(s));
 }

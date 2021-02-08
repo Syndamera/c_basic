@@ -14,16 +14,16 @@ int main(int argv, char*argc)
     TempratureTable(10, 10);
     
     float c = KelvinToCelsius(274.15f);
-    printf("Kelvin > Celsius: %.4f\n", c);
-    
-    c = FahrenheitToCelsius(50);
-    printf("Fahrenheit > Celsius: %.4f\n", c);
-    
-    float k = FahrenheitToKelvin(50);
-    printf("Fahrenheit > Kelvin: %.4f\n", k);
+    printf("Kelvin > Celsius: %.2f\n", c);
     
     float f = KelvinToFahrenheit(283.15);
-    printf("Kelvin > Fahrenheit: %.4f\n", f);
+    printf("Kelvin > Fahrenheit: %.2f\n", f);
+    
+    c = FahrenheitToCelsius(50);
+    printf("Fahrenheit > Celsius: %.2f\n", c);
+    
+    float k = FahrenheitToKelvin(50);
+    printf("Fahrenheit > Kelvin: %.2f\n", k);
     
     TypeSizes();
     printf("Macro Test: %d\n", SQUARE(4));

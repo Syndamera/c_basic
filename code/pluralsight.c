@@ -58,6 +58,7 @@ float FahrenheitToKelvin(float fahr)
 }
 
 // c = f - 32 / 9 / 5
+// 9/5 = 1.8
 float FahrenheitToCelsius(float fahr)
 {
     return (fahr - 32) / 1.8f;
@@ -108,3 +109,53 @@ void PrintArrays()
         p++;
     }
 }
+
+int* GetSmallestInteger(int* start, int* end)
+{
+    if(start == end)
+    {
+        return 0;
+    }
+    
+    int* smallest = start;
+    while(start != end)
+    {
+        if(*smallest > *start)
+        {
+            smallest = start;
+        }
+        start++;
+    }
+    return smallest;
+}
+
+int* GetLargestInteger(int* start, int* end)
+{
+    if(start == end)
+    {
+        return 0;
+    }
+    
+    int* largest = start;
+    while(start != end)
+    {
+        if(*largest < *start)
+        {
+            largest = start;
+        }
+        start++;
+    }
+    return largest;
+}
+
+void PrintIntegerArray(int* start, int* end)
+{
+    int count = 0;
+    while(start != end)
+    {
+        printf("Index: %d Value: %d\n", count, *start);
+        start++;
+        count++;
+    }
+}
+

@@ -10,5 +10,8 @@ float KelvinToCelsius(float);
 float FahrenheitToCelsius(float);
 float FahrenheitToKelvin(float);
 void Pluralsight(float);
+int* GetSmallestInteger(int*, int*);
+int* GetLargestInteger(int*, int*);
+void PrintIntegerArray(int*, int*);
 
 #endif //PLURALSIGHT_H

@@ -39,9 +39,34 @@ int main(int argv, char*argc)
     //TypeSizes();
     //printf("Macro Test: %d\n", SQUARE(4));
     
+    // prints out the struct size in bytes
     //PluralStruct s = {0};
     //PrintStructSize(s);
     
     // prints out the the array depending on the size of the array.
-    PrintArrays();
+    //PrintArrays();
+    
+    // functions, arrays and pointers
+    int numbers[] = { 7, 5, 4, 2, 3, 9 };
+    int size = sizeof(numbers) / sizeof(numbers[0]);
+    int* p = numbers; // this points to the first 4 or 8 bytes depending if its on a 32 or 64-bit machine.
+    
+    printf("array: %d bytes pointer: %d bytes\n", (int)sizeof(numbers), (int)sizeof(p));
+    
+    int* end = p + size;
+    PrintIntegerArray(numbers, numbers + size);
+    
+    int* smallest = GetSmallestInteger(p, end);
+    int* largest = GetLargestInteger(numbers, numbers + size);
+    
+    if(largest)
+    {
+        printf("The largest integer in the array are %d\n", *largest); // dereference the pointer
+    }
+    if(smallest)
+    {
+        printf("The smallest integer in the array are %d\n", *smallest); // dereference the pointer
+    }
+    
+    
 }

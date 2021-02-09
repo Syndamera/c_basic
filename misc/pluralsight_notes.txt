@@ -147,4 +147,14 @@ A function call is an expression. A decleration of a variable is an expression.
 	int after = ++eggs; // after will hold the value of 14 (returns the value directly)
 
 # POINTERS & ARRAYS #
+A simple memory adress example. 
+	int i = 1234;
+	printf("0x%p\n", &i); // prints the adress or offset
+	int* p = &i;
+	int j = *p; // dereference and now j contains the value 1234.
+	*p = 2345; // points to i and changes the value of i from 1234 > 2345
 
+# ARRAYS #
+
+	int numbers[] = { 101, 202, 303 }; // optional initializer
+	int numbers[3]; // enough space to hold 3 ints (12 bytes)

@@ -22,23 +22,26 @@ int main(int argv, char*argc)
     //PrintFahrCelsius();
     
     // Pluralsight
-    TempratureTable(10, 10);
+    //TempratureTable(10, 10);
     
-    float c = KelvinToCelsius(274.15f);
-    printf("Kelvin > Celsius: %.2f\n", c);
+    //float c = KelvinToCelsius(274.15f);
+    //prHeyintf("Kelvin > Celsius: %.2f\n", c);
     
-    float f = KelvinToFahrenheit(283.15);
-    printf("Kelvin > Fahrenheit: %.2f\n", f);
+    //float f = KelvinToFahrenheit(283.15);
+    //printf("Kelvin > Fahrenheit: %.2f\n", f);
     
-    c = FahrenheitToCelsius(50);
-    printf("Fahrenheit > Celsius: %.2f\n", c);
+    //c = FahrenheitToCelsius(50);
+    //printf("Fahrenheit > Celsius: %.2f\n", c);
     
-    float k = FahrenheitToKelvin(50);
-    printf("Fahrenheit > Kelvin: %.2f\n", k);
+    //float k = FahrenheitToKelvin(50);
+    //printf("Fahrenheit > Kelvin: %.2f\n", k);
     
-    TypeSizes();
-    printf("Macro Test: %d\n", SQUARE(4));
+    //TypeSizes();
+    //printf("Macro Test: %d\n", SQUARE(4));
     
-    PluralStruct s = {0};
-    PrintStructSize(s);
+    //PluralStruct s = {0};
+    //PrintStructSize(s);
+    
+    // prints out the the array depending on the size of the array.
+    PrintArrays();
 }

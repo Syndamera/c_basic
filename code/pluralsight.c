@@ -76,7 +76,7 @@ void TempratureTable(float celsius, int step)
     }
 }
 
-// no return type so is not declared in the .h file, why does this work?
+// no return type or parameter so is not declared in the .h file, why does this work?
 void TypeSizes()
 {
     printf("byte: %u bytes\n", (int)sizeof(byte));
@@ -85,4 +85,26 @@ void TypeSizes()
     printf("int: %d bytes\n", (int)sizeof(int));
     printf("float: %d bytes\n", (int)sizeof(float));
     printf("double: %d bytes\n", (int)sizeof(double));
+}
+
+void PrintArrays()
+{
+    printf("Array with for loop\n");
+    int numbers[5] = { 101, 202, 303 };
+    int size = sizeof(numbers) / sizeof(numbers[0]);
+    
+    for(int i = 0; i < size; i++)
+    {
+        printf("%d\n", numbers[i]);
+    }
+    
+    printf("Pointer Arithmetics with while loop\n");
+    int* p = numbers;
+    int* end = p + size;
+    
+    while(p != end)
+    {
+        printf("%d\n", *p);
+        p++;
+    }
 }

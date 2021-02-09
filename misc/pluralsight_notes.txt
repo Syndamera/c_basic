@@ -158,3 +158,5 @@ A simple memory adress example.
 
 	int numbers[] = { 101, 202, 303 }; // optional initializer
 	int numbers[3]; // enough space to hold 3 ints (12 bytes)
+
+See code examples from here on.

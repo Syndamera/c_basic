@@ -13,5 +13,6 @@ void Pluralsight(float);
 int* GetSmallestInteger(int*, int*);
 int* GetLargestInteger(int*, int*);
 void PrintIntegerArray(int*, int*);
+int StringLength(char*);
 
 #endif //PLURALSIGHT_H

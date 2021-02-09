@@ -68,5 +68,18 @@ int main(int argv, char*argc)
         printf("The smallest integer in the array are %d\n", *smallest); // dereference the pointer
     }
     
+    // c strings always have a null terminator (0).
+    char* string = "Hello W";
+    printf("size %d\n", (int)sizeof(string));
+    int length = 0;
+    for(char* p = string; *p != 0; p++)
+    {
+        length++;
+    }
+    printf("length %d\n", length);
+    
+    printf("Length: %d\n", StringLength("Hello Sailor!"));
+    printf("Length: %d\n", StringLength("Hello!"));
+    printf("Length: %d\n", StringLength("Hello There"));
     
 }

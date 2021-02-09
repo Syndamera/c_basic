@@ -159,3 +159,13 @@ void PrintIntegerArray(int* start, int* end)
     }
 }
 
+int StringLength(char* string)
+{
+    int length = 0;
+    while(*string++) // we also removed (!= 0) and just use *string as the condition is true for all other than 0
+    {
+        length++;
+    }
+    return length;
+}
+

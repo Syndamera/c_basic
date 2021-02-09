@@ -16,6 +16,30 @@ void PrintStructSize(PluralStruct s)
     printf("Struct Size: %d\n", (int)sizeof(s));
 }
 
+void MinMax(int* start, int* end, int** smallest, int** largest)
+{
+    if(start == end)
+    {
+        *smallest = 0;
+        *largest = 0;
+    }
+    else
+    {
+        *smallest = *largest = start;
+        while(++start != end) // make sure we start on the next element in the array by pre inc
+        {
+            if(*start < **smallest)
+            {
+                *smallest = start;
+            }
+            if(*start > **largest)
+            {
+                *largest = start;
+            }
+        }
+    }
+}
+
 int main(int argv, char*argc)
 {
     // Ansi C - Chapter 01
@@ -68,7 +92,7 @@ int main(int argv, char*argc)
         printf("The smallest integer in the array are %d\n", *smallest); // dereference the pointer
     }
     
-    // c strings always have a null terminator (0).
+    // c string literals always have a null terminator (0).
     char* string = "Hello W";
     printf("size %d\n", (int)sizeof(string));
     int length = 0;
@@ -81,5 +105,19 @@ int main(int argv, char*argc)
     printf("Length: %d\n", StringLength("Hello Sailor!"));
     printf("Length: %d\n", StringLength("Hello!"));
     printf("Length: %d\n", StringLength("Hello There"));
+    
+    // pointers to pointers
+    int value = 123;
+    int* p1 = &value;
+    int** p1p = &p;
+    
+    int values[] = {5, 2, 4, 2, 6 };
+    int sizeValues = sizeof(values) / sizeof(values[0]);
+    int* s = 0;
+    int* l = 0;
+    MinMax(values, values + sizeValues, &s, &l);
+    printf("Min = %d Max = %d\n", *s, *l);
+    
+    
     
 }

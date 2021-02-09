@@ -130,3 +130,21 @@ typedef enum
 	type = IsChar;
 	
 # STATEMENTS #
+if, switch, while do and for statements.
+
+# EXPRESSIONS #
+A function call is an expression. A decleration of a variable is an expression.
+	int eggs = 48;
+	int dozens = eggs / 12;
+
+# INC & DEC #
+
+	++eggs; // pre
+	eggs++ // post
+	
+	int eggs = 12;
+	int before = eggs++; // before will hold the value of 12 (returns the previous value)
+	int after = ++eggs; // after will hold the value of 14 (returns the value directly)
+
+# POINTERS & ARRAYS #
+

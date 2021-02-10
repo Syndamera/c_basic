@@ -26,6 +26,7 @@ void MinMax(int* start, int* end, int** smallest, int** largest)
     else
     {
         *smallest = *largest = start;
+        printf("%d\n", **largest);
         while(++start != end) // make sure we start on the next element in the array by pre inc
         {
             if(*start < **smallest)
@@ -71,13 +72,14 @@ int main(int argv, char*argc)
     //PrintArrays();
     
     // functions, arrays and pointers
-    int numbers[] = { 7, 5, 4, 2, 3, 9 };
+    /*int numbers[] = { 7, 5, 4, 2, 3, 9, 12, 55 };
     int size = sizeof(numbers) / sizeof(numbers[0]);
     int* p = numbers; // this points to the first 4 or 8 bytes depending if its on a 32 or 64-bit machine.
     
     printf("array: %d bytes pointer: %d bytes\n", (int)sizeof(numbers), (int)sizeof(p));
     
     int* end = p + size;
+    printf("Array Length: %d\n", *end);
     PrintIntegerArray(numbers, numbers + size);
     
     int* smallest = GetSmallestInteger(p, end);
@@ -110,6 +112,7 @@ int main(int argv, char*argc)
     int value = 123;
     int* p1 = &value;
     int** p1p = &p;
+    */
     
     int values[] = {5, 2, 4, 2, 6 };
     int sizeValues = sizeof(values) / sizeof(values[0]);
@@ -117,7 +120,6 @@ int main(int argv, char*argc)
     int* l = 0;
     MinMax(values, values + sizeValues, &s, &l);
     printf("Min = %d Max = %d\n", *s, *l);
-    
     
     
 }

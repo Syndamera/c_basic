@@ -169,7 +169,7 @@ int main(int argv, char*argc)
     printf("%s", input);*/
     
     // files
-    FILE* f = 0;
+    /*FILE* f = 0;
     errno_t result = fopen_s(&f, "W:\\c_basic\\assets\\message.txt", "w"); // if it does not exist it creates one.
     
     if(result != 0)
@@ -182,7 +182,58 @@ int main(int argv, char*argc)
     }
     
     fprintf_s(f, "Hello file\n");
-    fclose(f);
+    fclose(f);*/
+    
+    // strings manipulation, char manipulation
+    char* msg = "Hello, this is a message! I contain: 1, 2, 3\n";
+    printf(msg);
+    
+    /*for(char* p = msg; *p; p++)
+    {
+        char c = *p;
+        printf("%c\t", c);
+        
+        if(isalnum(c)) printf("isalnum ");
+        if(isalpha(c)) printf("isalpha ");
+        if(islower(c)) printf("islower ");
+        if(isupper(c)) printf("isupper ");
+        if(isdigit(c)) printf("isdigit ");
+        if(isxdigit(c)) printf("isxdigit ");
+        if(iscntrl(c)) printf("iscntrl ");
+        if(isgraph(c)) printf("isgraph ");
+        if(isspace(c)) printf("isspace ");
+        if(isblank(c)) printf("isblank ");
+        if(isprint(c)) printf("isprint ");
+        if(ispunct(c)) printf("ispunct ");
+        
+        printf("\n");
+    }*/
+    
+    for(char* p = msg; *p; p++)
+    {
+        if(isupper(*p))
+            *p = (char)tolower(*p);
+        else if(islower(*p))
+            *p = (char)toupper(*p);
+    }
+    printf(msg);
+    
+    double d = atof("123.456"); // ascii to float (wtof = wide char)
+    int i = atoi("1234"); // ascii to int
+    printf("%.3f %d\n", d, i);
+    
+    char* numbers = "12 0x123 101"; // decimal, hex, binary
+    char* next = numbers;
+    int decimal = strtol(next, &next, 10); // string to long
+    int hex = strtol(next, &next, 0); // detect number system but if missed it will be decimal
+    int binary = strtol(next, &next, 2);
+    printf("%d %d %d\n", decimal, hex, binary);
+    
+    msg = "Hello";
+    printf("size: %d\n", (int)strlen(msg));
+    printf("Apples %d\n", strcmp(msg, "Apples"));
+    printf("Oranges %d\n", strcmp(msg, "Oranges"));
+    printf("Hello %d\n", strcmp(msg, "Hello"));
     
     return 0;
 }

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "ansic/chapter01_notes.c"
 #include "pluralsight.h"
 
@@ -16,17 +17,16 @@ void PrintStructSize(PluralStruct s)
     printf("Struct Size: %d\n", (int)sizeof(s));
 }
 
-void MinMax(int* start, int* end, int** smallest, int** largest)
+void MinMax(int* start, int* end, int** smallest, int** largest) // smallest, largest are out parameters
 {
     if(start == end)
     {
-        *smallest = 0;
+        *smallest = 0; // setting the out parameters to 0
         *largest = 0;
     }
     else
     {
-        *smallest = *largest = start;
-        printf("%d\n", **largest);
+        *smallest = *largest = start; // assumes that element 0 is both the smallest and largest number
         while(++start != end) // make sure we start on the next element in the array by pre inc
         {
             if(*start < **smallest)
@@ -114,12 +114,30 @@ int main(int argv, char*argc)
     int** p1p = &p;
     */
     
-    int values[] = {5, 2, 4, 2, 6 };
-    int sizeValues = sizeof(values) / sizeof(values[0]);
+    // passing the adress of pointers to pointers in a function
     int* s = 0;
     int* l = 0;
+    int values[] = {5, 2, 4, 6, 9 };
+    int sizeValues = sizeof(values) / sizeof(values[0]);
+    
     MinMax(values, values + sizeValues, &s, &l);
     printf("Min = %d Max = %d\n", *s, *l);
     
+    // memory management
+    /*int* p = (int*)malloc(4); // allocating memory on the Heap
+    if(!p)
+    {
+        return 1; // no heap memory avaible
+    }
+    *p = 42;
+    free(p);
+    void* frame = malloc(514);
+    free(frame);
+    char* message = (char*) malloc(200);
+    message = "testing a message";
+    free(message);*/
     
+    
+    
+    return 0;
 }

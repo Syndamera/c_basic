@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "ansic/chapter01_notes.c"
 #include "pluralsight.h"
 
@@ -114,16 +115,16 @@ int main(int argv, char*argc)
     int** p1p = &p;
     */
     
-    // passing the adress of pointers to pointers in a function
-    int* s = 0;
+    // passing the adress of pointers to pointers in a function - use debugger to see values of pointers in memory.
+    /*int* s = 0;
     int* l = 0;
     int values[] = {5, 2, 4, 6, 9 };
     int sizeValues = sizeof(values) / sizeof(values[0]);
     
     MinMax(values, values + sizeValues, &s, &l);
-    printf("Min = %d Max = %d\n", *s, *l);
+    printf("Min = %d Max = %d\n", *s, *l);*/
     
-    // memory management
+    // memory management - use debugger, this code won't run correctly.
     /*int* p = (int*)malloc(4); // allocating memory on the Heap
     if(!p)
     {
@@ -137,7 +138,51 @@ int main(int argv, char*argc)
     message = "testing a message";
     free(message);*/
     
+    // input and output - formatting with printf
+    /*printf("%I64d\n", 111222333444);
+    printf("0x%I64X\n", 111222333444);
     
+    printf("%10.2f\n", 123.456); // rounds up to fit the two decimal restriction
+    printf("%10d\n", 456); // right align numbers, use (-) infront of the 10 to left align the numbers
+    
+    char* message = "Hi, How are you?";
+    int charsize = 5;
+    printf("%.*s\n", charsize, message);*/
+    
+    // strings, security and scanf
+    /*char* font = "Myriad Pro";
+    int size = 32;
+    char* message = "Hello World";
+    
+    char buffer[256];
+    //sprintf does not take a sizeof
+    sprintf_s(buffer, sizeof(buffer), "<html><body><p style='font-family:%s;font-size:%dpx'>%s</p></body></html>",
+              font, size, message);
+    printf("%s\n", buffer);
+    
+    //int a, b, c;
+    //scanf("%d %d %d", &a, &b, &c); // we can easily overflow scanf
+    //printf("%d %d %d", a, b, c);
+    
+    unsigned char input[10];
+    scanf_s("%9s", &input, sizeof(input)); // (9) truncates the input
+    printf("%s", input);*/
+    
+    // files
+    FILE* f = 0;
+    errno_t result = fopen_s(&f, "W:\\c_basic\\assets\\message.txt", "w"); // if it does not exist it creates one.
+    
+    if(result != 0)
+    {
+        char buffer[100];
+        strerror_s(buffer, sizeof(buffer), result);
+        
+        printf("%s (%d)\n", buffer, result);
+        return result;
+    }
+    
+    fprintf_s(f, "Hello file\n");
+    fclose(f);
     
     return 0;
 }

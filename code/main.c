@@ -18,6 +18,16 @@ void PrintStructSize(PluralStruct s)
     printf("Struct Size: %d\n", (int)sizeof(s));
 }
 
+int Pow(int base, int exponent)
+{
+    int number = 0;
+    for(int i = 1; i <= exponent; i++)
+    {
+        number = base * exponent;
+    }
+    return number;
+}
+
 void MinMax(int* start, int* end, int** smallest, int** largest) // smallest, largest are out parameters
 {
     if(start == end)
@@ -109,7 +119,7 @@ int main(int argv, char*argc)
     printf("Length: %d\n", StringLength("Hello!"));
     printf("Length: %d\n", StringLength("Hello There"));
     
-    // pointers to pointers
+    // # POINTERS TO POINTERS #
     int value = 123;
     int* p1 = &value;
     int** p1p = &p;
@@ -234,6 +244,11 @@ int main(int argv, char*argc)
     printf("Apples %d\n", strcmp(msg, "Apples"));
     printf("Oranges %d\n", strcmp(msg, "Oranges"));
     printf("Hello %d\n", strcmp(msg, "Hello"));
+    
+    int base = 2;
+    int exp = 8;
+    int Result = Pow(base, exp);
+    printf("Power of %d^%d equals %d\n", base, exp, Result);
     
     return 0;
 }

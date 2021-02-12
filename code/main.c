@@ -21,7 +21,7 @@ void PrintStructSize(PluralStruct s)
 
 float Sqr(int a)
 {
-    // a = input;
+    // a = input number;
     // b = potential square root  
     // a = b * b
     float b = 1;
@@ -30,11 +30,12 @@ float Sqr(int a)
         b++;
     }
     
-    // om b * b > a då ska vi hitta decimal
+    // we found the right integer value.
+    // if b * b > a then add with a precision number
     
     if(b * b > a)
     {
-        b--;
+        b--; // remove 1 and start adding precision
         float precision = 0.0001;
         while(b * b < a)
         {
@@ -278,7 +279,9 @@ int main(int argv, char*argc)
     
     float root = Sqr(12);
     printf("SQR: %.4f\n", root);
-    float root1 = Sqr(1014);
+    float int_max = 21474483547;
+    printf("INT MAX = %f\n", int_max);
+    float root1 = Sqr(3448354);
     printf("SQR: %.4f\n", root1);
     
     return 0;

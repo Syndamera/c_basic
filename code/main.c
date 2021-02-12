@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 #include "ansic/chapter01_notes.c"
 #include "pluralsight.h"
 
@@ -18,12 +19,37 @@ void PrintStructSize(PluralStruct s)
     printf("Struct Size: %d\n", (int)sizeof(s));
 }
 
+float Sqr(int a)
+{
+    // a = input;
+    // b = potential square root  
+    // a = b * b
+    float b = 1;
+    while(b * b < a) // a = 16 != b = 4 * 4
+    {
+        b++;
+    }
+    
+    // om b * b > a då ska vi hitta decimal
+    
+    if(b * b > a)
+    {
+        b--;
+        float precision = 0.0001;
+        while(b * b < a)
+        {
+            b = b + precision;
+        }
+    }
+    return b;
+}
+
 int Pow(int base, int exponent)
 {
-    int number = 0;
+    int number = 1;
     for(int i = 1; i <= exponent; i++)
     {
-        number = base * exponent;
+        number = base * number;
     }
     return number;
 }
@@ -249,6 +275,11 @@ int main(int argv, char*argc)
     int exp = 8;
     int Result = Pow(base, exp);
     printf("Power of %d^%d equals %d\n", base, exp, Result);
+    
+    float root = Sqr(12);
+    printf("SQR: %.4f\n", root);
+    float root1 = Sqr(1014);
+    printf("SQR: %.4f\n", root1);
     
     return 0;
 }

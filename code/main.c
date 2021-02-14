@@ -4,6 +4,7 @@
 #include <limits.h>
 #include "ansic/chapter01_notes.c"
 #include "pluralsight.h"
+#include "memory.c"
 
 int global_int = 0; // accessible in all files.
 static int static_global_int; // accessible only in this file.
@@ -79,7 +80,7 @@ void MinMax(int* start, int* end, int** smallest, int** largest) // smallest, la
     }
 }
 
-int main(int argv, char*argc)
+int main(int argc, char** argv)
 {
     // Ansi C - Chapter 01
     //PrintFahrCelsius();
@@ -222,10 +223,10 @@ int main(int argv, char*argc)
     fclose(f);*/
     
     // strings manipulation, char manipulation
-    char* msg = "Hello, this is a message! I contain: 1, 2, 3\n";
+    /*char* msg = "Hello, this is a message! I contain: 1, 2, 3\n";
     printf(msg);
     
-    /*for(char* p = msg; *p; p++)
+    for(char* p = msg; *p; p++)
     {
         char c = *p;
         printf("%c\t", c);
@@ -244,7 +245,7 @@ int main(int argv, char*argc)
         if(ispunct(c)) printf("ispunct ");
         
         printf("\n");
-    }*/
+    }
     
     for(char* p = msg; *p; p++)
     {
@@ -253,9 +254,9 @@ int main(int argv, char*argc)
         else if(islower(*p))
             *p = (char)toupper(*p);
     }
-    printf(msg);
+    printf(msg);*/
     
-    double d = atof("123.456"); // ascii to float (wtof = wide char)
+    /*double d = atof("123.456"); // ascii to float (wtof = wide char)
     int i = atoi("1234"); // ascii to int
     printf("%.3f %d\n", d, i);
     
@@ -282,7 +283,9 @@ int main(int argv, char*argc)
     float int_max = 21474483547;
     printf("INT MAX = %f\n", int_max);
     float root1 = Sqr(3448354);
-    printf("SQR: %.4f\n", root1);
+    printf("SQR: %.4f\n", root1);*/
+    
+    Memory();
     
     return 0;
 }

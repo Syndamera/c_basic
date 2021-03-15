@@ -19,5 +19,4 @@ void Memory()
     int a = 15;
     int b = 6;
     printf("%d\n", HalfAdder(a, b));
-    
 }

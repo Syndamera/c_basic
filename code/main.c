@@ -5,6 +5,7 @@
 #include "ansic/chapter01_notes.c"
 #include "pluralsight.h"
 #include "memory.c"
+#include "tilemap.c"
 
 int global_int = 0; // accessible in all files.
 static int static_global_int; // accessible only in this file.
@@ -285,7 +286,9 @@ int main(int argc, char** argv)
     float root1 = Sqr(3448354);
     printf("SQR: %.4f\n", root1);*/
     
-    Memory();
+    //Memory();
+    
+    Tilemap();
     
     return 0;
 }
